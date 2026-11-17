@@ -5,10 +5,10 @@
     "date": "2026-10-20",
     "title": "The 40-year arc",
     "copy": "In 1987, Apple released a concept video called the Knowledge Navigator.\n\nIt showed a future where a conversational assistant knew you — your work, your calendar, your life — and just... handled things. Research, scheduling, the boring stuff. You talked, it did.\n\nI was in my twenties. And I never stopped thinking about it.\n\nIn 1993 I built my own version for the Mac. It worked. People used it.\n\nAnd now, 40 years after that concept video, I'm building it again — for today's world, with today's AI. The tech finally caught up to the idea.\n\nThe vision took 40 years. We're building it now.\n\nMore nuggets coming. This is going to be fun.",
-    "linkedin_url": null,
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7518441470295457793/",
     "visual_default": "post-01.jpg",
     "visual_note": "- The real 1993 Rae Assist binder home screenshot (\"Dave's Binder\" in the title bar) - Local file: ~/workspace/marketing-buddy/rae-assist-screenshots/rae-assist-binder-home.jpg - No tip-jar flag on Day 1 (tip-jar mentions are in posts 9, 11, 12, 14 per the Oct 19 staging note)",
-    "posted": false,
+    "posted": true,
     "draft_file": "linkedin-drip-day1-2026-10-20.md"
   },
   {
@@ -26,14 +26,15 @@
   {
     "series": 1,
     "day": 3,
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "title": "Rae Assist, 1993",
     "copy": "So in 1993, I built one.\n\nRae Assist: a personal assistant for the Mac. It managed your day, your contacts, your information — the stuff a good assistant does. This was before “personal assistant” meant a voice in a speaker.\n\nIt was real software. Real users. One of them ran it on a PowerBook 160 in New York City and never forgot it.\n\nI shelved it eventually. The world wasn’t ready, and honestly, neither was the tech. But I kept the idea.\n\nIdeas are patient. They wait. 💾",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7519432813083996160/",
     "visual_default": "post-03.jpg",
     "visual_note": "- Rae Assist person card (Ron Campanella card) — \"Real software. Real users.\" - Local file: ~/workspace/art-director-buddy/teaser-bank-visuals/post-03.jpg (verified present, 361 KB) - No tip-jar flag on Day 3 (tip-jar mentions are in posts 9, 11, 12, 14 per the Oct 19 staging note)",
     "posted": true,
-    "draft_file": "linkedin-drip-day3-2026-10-22.md"
+    "draft_file": "linkedin-drip-day3-2026-10-22.md",
+    "note": "Planned for Oct 22 — LinkedIn's sign-in wall had other plans that day, so Day 3 posted a day late, on the morning of Oct 23."
   },
   {
     "series": 1,
@@ -98,14 +99,15 @@
   {
     "series": 1,
     "day": 9,
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "title": "Forgotten subscriptions",
     "copy": "How much did you pay for a financial advisor to find your forgotten subscriptions?\n\nI asked my money buddy: 'What subscriptions am I still paying for that I forgot about?'\n\nIt went through my transactions and came back with the list. The ones I'd forgotten. The ones quietly billing me every month for things I don't use.\n\nA financial advisor charges $200+ an hour for that conversation.\n\nI paid $0.\n\nThere's a tip jar. [link coming — tip jar being set up this week] 👻",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7522326760487571456/",
     "visual_default": "post-09.jpg",
     "visual_note": "- Local file: ~/workspace/art-director-buddy/teaser-bank-visuals/post-09.jpg (verified present, ~71 KB, 1200x627 JPEG) - Tip-jar post: YES (Posts 9, 11, 12, 14 carry the tip-jar punchline)",
     "posted": true,
-    "draft_file": "linkedin-drip-day9-2026-10-28.md"
+    "draft_file": "linkedin-drip-day9-2026-10-28.md",
+    "note": "Originally posted Oct 30; deleted and reposted Oct 31 to fix the tip-jar placeholder link. The LinkedIn link below is the live repost."
   },
   {
     "series": 1,
@@ -117,19 +119,21 @@
     "visual_default": "post-10.jpg",
     "visual_note": "- Local file: ~/workspace/art-director-buddy/teaser-bank-visuals/post-10.jpg (verified present, ~71 KB, 1200x627 JPEG expected per bank visuals) - No tip-jar flag on Day 10 (tip-jar mentions are in posts 9, 11, 12, 14 per the Oct 19 staging note)",
     "posted": true,
-    "draft_file": "linkedin-drip-day10-2026-10-29.md"
+    "draft_file": "linkedin-drip-day10-2026-10-29.md",
+    "note": "Originally posted Oct 29; deleted and reposted Oct 31 in the same tip-jar link fix round. The LinkedIn link below is the live repost."
   },
   {
     "series": 1,
     "day": 11,
-    "date": "2026-10-30",
+    "date": "2026-10-31",
     "title": "The eyeglasses story",
     "copy": "Real one from this month.\n\nI told my money buddy: ‘Budget for two pairs of eyeglasses, about $700 a pair.’\n\nIt looked at my bills, my cash flow, my bank balance — and told me when I could buy them. Not a lecture. A plan.\n\nThat’s the difference between a ledger and an advisor. A ledger tells you what you spent. An advisor tells you what to do next.\n\nHow much did you pay for that advice? $0.\n\nThere’s a tip jar. [link coming — tip jar being set up this week] 👓",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7522338802175123457/",
     "visual_default": "post-11.jpg",
     "visual_note": "- Local file: ~/workspace/art-director-buddy/teaser-bank-visuals/post-11.jpg (verified present, 69,725 bytes, 1200x627 JPEG) - ⚠️ Content verified by direct inspection 2026-10-30: PLACEHOLDER screenshot-slot graphic — see Open Item 2 above. - Tip-jar post: YES (Posts 9, 11, 12, 14 carry the tip-jar punchline)",
     "posted": true,
-    "draft_file": "linkedin-drip-day11-2026-10-30.md"
+    "draft_file": "linkedin-drip-day11-2026-10-30.md",
+    "note": "Planned for Oct 30; posted Oct 31."
   },
   {
     "series": 1,
@@ -141,7 +145,8 @@
     "visual_default": "post-12.jpg",
     "visual_note": "- Local file: ~/workspace/art-director-buddy/teaser-bank-visuals/post-12.jpg (verified present, 33,642 bytes, 1200x627 JPEG) - ⚠️ Content verified by direct inspection 2026-10-31: ILLUSTRATIVE DATA chart — footer quoted above. Do not post with this visual. - Tip-jar note: the bank Post 12 copy as read from the bank doc on this run carries no \"[link coming — tip jar being set up this week]\" line, s",
     "posted": true,
-    "draft_file": "linkedin-drip-day12-2026-10-31.md"
+    "draft_file": "linkedin-drip-day12-2026-10-31.md",
+    "note": "The image is a crop of Dave's own Monthly Trend screenshot — the bank's chart for this post was marked illustrative and never ran. The copy carries his one approved edit: “Ten months,” because the real data runs January through October."
   },
   {
     "series": 1,

@@ -176,9 +176,20 @@ def main():
     assets = ROOT / "assets"
     assets.mkdir(exist_ok=True)
 
-    # Copy Series 1 visuals; Day 14 ran with Dave's own screenshots instead of post-14.jpg.
+    # Copy Series 1 visuals. Per the canonical inventory (Social Media Buddy,
+    # Nov 16, 2026): Day 1 ran with the real binder screenshot (not post-01.jpg),
+    # Day 12 with Dave's own Monthly Trend crop (not the illustrative post-12.jpg),
+    # Day 14 with Dave's own two screenshots (not post-14.jpg).
     for p in s1:
-        if p["day"] == 14:
+        if p["day"] == 1:
+            src = Path.home() / "workspace" / "marketing-buddy" / "rae-assist-screenshots" / "rae-assist-binder-home.jpg"
+            shutil.copy(src, assets / "day01-binder.jpg")
+            p["images"] = [("assets/day01-binder.jpg", "The image that ran with Day 1: the real 1993 Rae Assist binder home screenshot — “Dave's Binder” in the title bar.")]
+        elif p["day"] == 12:
+            src = Path.home() / "workspace" / "linkedin-day12-review" / "day12-monthly-trend-review.jpg"
+            shutil.copy(src, assets / "day12-trend.jpg")
+            p["images"] = [("assets/day12-trend.jpg", "The image that ran with Day 12: a crop of Dave's own Monthly Trend screenshot — ten real months of his spending.")]
+        elif p["day"] == 14:
             shutil.copy(DAY14_DIR / "day14-hero-games.jpg", assets / "day14-hero.jpg")
             shutil.copy(DAY14_DIR / "day14-alt-maxheadroom.jpg", assets / "day14-alt.jpg")
             p["images"] = [("assets/day14-hero.jpg", "Money Buddy at home — Dave's own screenshot, wearing the Pac-Man background he set himself. The finale's hero image."),
@@ -197,6 +208,7 @@ def main():
             for src, caption in p["images"])
         link = (f'<a class="btn" href="{p["linkedin_url"]}">Read it on LinkedIn</a>'
                 if p["linkedin_url"] else "")
+        note = f'<div class="note">{esc(p["note"])}</div>' if p.get("note") else ""
         prev = (f'<a href="day-{s1[i-1]["day"]:02d}.html">&larr; Day {s1[i-1]["day"]} — {esc(s1[i-1]["title"])}</a>'
                 if i > 0 else '<span class="off">Day 1 — the start</span>')
         nxt = (f'<a href="day-{s1[i+1]["day"]:02d}.html">Day {s1[i+1]["day"]} — {esc(s1[i+1]["title"])} &rarr;</a>'
@@ -205,6 +217,7 @@ def main():
 <p class="lede">Series 1 · Day {p['day']} of 14 · Posted {fmt_date(p['date'])} on LinkedIn.</p>
 {figs}
 <div class="copy">{paras(p['copy'])}</div>
+{note}
 {link}
 <nav class="pn">{prev}{nxt}</nav>"""
         (s1dir / f"day-{p['day']:02d}.html").write_text(
@@ -223,7 +236,7 @@ def main():
 <div class="note"><strong>The beat:</strong> {esc(p['beat'])}</div>
 <div class="copy">{paras(p['copy'])}</div>
 <div class="note"><strong>Production note:</strong> {esc(p['screenshot_plan'])}</div>
-<p>This page presents the draft from the Series 2 slate, presented to Dave on Nov 2, 2026. Per the campaign rule, nothing posts until he green-lights the series.</p>
+<p>This page presents the draft from the Series 2 slate, presented to Dave on Nov 2, 2026. The green light never came — the proposed Nov 3–16 window closed with the slate unposted, so Series 2 stands as written here: the tour that was planned, kept on the record.</p>
 <nav class="pn">{prev}{nxt}</nav>"""
         (s2dir / f"post-{p['day']:02d}.html").write_text(
             page(p["title"], f"Series 2 · <b>Post {p['day']} of 14 — the slate</b>", body, prefix="../"))
@@ -248,7 +261,7 @@ def main():
 <p>Oct 20 – Nov 2, 2026. The origin arc — a 1987 concept video, a 1993 Mac program called Rae Assist, its first user coming back — and then the present day: Money Buddy, the first buddy out the door, and a tip jar for a business model. All fourteen posts are live on LinkedIn; each page here carries the copy exactly as published, the image that ran with it, and the link to the post itself.</p>
 <div class="cards">{cards1}</div>
 <h2>Series 2 — <em>the whole staff.</em></h2>
-<p>Series 1 was one app. Series 2 is the platform: the staff model, the dashboard, the briefings and the standup, two newspapers, an hourly chime, a joke vault — Money Buddy reframed as one desk among many. The slate was presented on Nov 2, 2026 with a proposed run of Nov 3–16; per the campaign rule, nothing posts until Dave green-lights the series. These pages present the slate as written — beat, draft copy, and the screenshot each post calls for.</p>
+<p>Series 1 was one app. Series 2 is the platform: the staff model, the dashboard, the briefings and the standup, two newspapers, an hourly chime, a joke vault — Money Buddy reframed as one desk among many. The slate was presented on Nov 2, 2026 with a proposed run of Nov 3–16, gated on Dave's green light. The green light never came, and the window closed unposted — so these pages present the slate as written: beat, draft copy, and the screenshot each post called for. The tour that was planned, kept on the record.</p>
 <div class="cards">{cards2}</div>"""
     (ROOT / "index.html").write_text(page("The Teaser Bank", "The Buddy System · <b>A LinkedIn campaign, collected</b>", body))
 

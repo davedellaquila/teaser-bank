@@ -3,7 +3,7 @@
 The collected pages of Dave Dell'Aquila's LinkedIn Teaser Bank campaigns:
 Series 1 (Oct 20 – Nov 2, 2026 — the origin arc and Money Buddy, all 14 posts
 live on LinkedIn) and the Series 2 slate (the buddy system as a whole,
-presented Nov 2, 2026; nothing posts until Dave green-lights the series).
+presented Nov 2, 2026; the green light never came and the proposed Nov 3–16 window closed unposted — the slate stands as written).
 
 Built by `build.py` from `data/series1.json` + `data/series2.json`
 (extracted by `extract_series1.py` / `extract_series2.py` from the campaign
