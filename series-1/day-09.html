@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forgotten subscriptions — The Teaser Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Libre+Franklin:wght@300;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14161b; --bg-deep:#0e0f12; --ink:#ece7da; --ink-soft:#b9b3a4; --ink-faint:#7d7768;
+  --accent:#e8a33d; --hairline:rgba(236,231,218,.16); --hairline-soft:rgba(236,231,218,.08);
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f6f1e7; --bg-deep:#efe8d8; --ink:#1c1a16; --ink-soft:#55503f; --ink-faint:#8a8471;
+    --accent:#9a6d1d; --hairline:rgba(28,26,22,.18); --hairline-soft:rgba(28,26,22,.09); }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Libre Franklin",system-ui,sans-serif;font-weight:300;line-height:1.7;
+  font-size:clamp(1rem,2.3vw,1.13rem)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:50;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme: light){ body::after{opacity:.035} }
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+.masthead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:18px 0 14px;border-bottom:1px solid var(--hairline);
+  font-family:"Libre Franklin",sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.3em;text-transform:uppercase}
+.masthead .r{letter-spacing:.26em;color:var(--ink-faint);text-align:right}
+.masthead .r b{color:var(--accent);font-weight:600}
+.masthead a{color:inherit;text-decoration:none}
+h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;line-height:1.08}
+h1{font-size:clamp(2.6rem,8vw,4.6rem);letter-spacing:-.01em;margin:.35em 0 .3em}
+h2{font-size:clamp(1.9rem,5.4vw,3.1rem);line-height:1.12;margin:1.4em 0 .4em}
+h1 em,h2 em{font-style:italic;color:var(--accent)}
+.kicker{font-family:"Libre Franklin",sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint);margin-top:34px}
+.kicker b{color:var(--accent);font-weight:600}
+p{color:var(--ink-soft);max-width:62ch}
+p strong,li strong{color:var(--ink);font-weight:500}
+.lede{font-size:clamp(1.08rem,2.6vw,1.28rem);color:var(--ink-soft)}
+.rule{width:56px;height:2px;background:var(--accent);margin:34px 0 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin:26px 0 8px}
+.card{display:block;text-decoration:none;border:1px solid var(--hairline);color:var(--ink);
+  background:transparent;transition:border-color .25s}
+.card:hover{border-color:var(--accent)}
+.card img{width:100%;aspect-ratio:1200/627;object-fit:cover;display:block}
+.card .pad{padding:14px 16px 16px}
+.card .n{font-family:"Libre Franklin",sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.card .t{font-family:"Playfair Display",Georgia,serif;font-size:1.28rem;line-height:1.2;margin:6px 0 4px}
+.card .d{font-size:.86rem;color:var(--ink-faint)}
+.card.type .pad{padding-top:18px}
+.card .beat{font-size:.92rem;color:var(--ink-soft);margin-top:6px;line-height:1.55}
+figure{margin:26px 0}
+figure img{width:100%;display:block;cursor:zoom-in;border:1px solid var(--hairline-soft)}
+figcaption{font-size:.82rem;color:var(--ink-faint);margin-top:8px}
+.copy p{color:var(--ink-soft)}
+.btn{display:inline-block;margin:10px 10px 0 0;padding:11px 20px;border:1px solid var(--accent);
+  color:var(--accent);text-decoration:none;font-family:"Libre Franklin",sans-serif;
+  font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.btn:hover{background:var(--accent);color:var(--bg)}
+.note{border-left:2px solid var(--accent);padding:4px 0 4px 16px;margin:26px 0;color:var(--ink-soft);font-size:.95rem}
+.pn{display:flex;justify-content:space-between;gap:14px;margin:44px 0 6px;
+  border-top:1px solid var(--hairline);padding-top:18px;font-size:.92rem}
+.pn a{color:var(--accent);text-decoration:none}
+.pn .off{color:var(--ink-faint)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:1px solid var(--hairline);margin-top:40px;padding:16px 0 34px;
+  font-size:.85rem;color:var(--ink-faint)}
+.vision{font-family:"Playfair Display",Georgia,serif;font-style:italic;
+  font-size:clamp(1.3rem,3.6vw,1.8rem);color:var(--ink);margin:44px 0 0}
+#lightbox{position:fixed;inset:0;background:rgba(8,9,11,.94);display:none;z-index:100;
+  align-items:center;justify-content:center;flex-direction:column}
+#lightbox.open{display:flex}
+#lightbox img{max-width:94vw;max-height:84vh;object-fit:contain}
+#lightbox .bar{display:flex;gap:22px;align-items:center;margin-top:14px;color:#ece7da;
+  font-family:"Libre Franklin",sans-serif;font-size:.85rem;letter-spacing:.12em}
+#lightbox button{background:none;border:1px solid rgba(236,231,218,.4);color:#ece7da;
+  font-size:1rem;padding:6px 14px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><a href="../index.html">The Buddy System</a><span class="r">The Teaser Bank · <b>LinkedIn 2026</b></span></header>
+<p class="kicker">Series 1 · <b>Day 9 of 14</b></p>
+<h1>Forgotten subscriptions</h1>
+<p class="lede">Series 1 · Day 9 of 14 · Posted Wed Oct 28, 2026 on LinkedIn.</p>
+<figure><img src="../assets/post-09.jpg" alt="The image that ran with Day 9 on LinkedIn."><figcaption>The image that ran with Day 9 on LinkedIn.</figcaption></figure>
+<div class="copy"><p>How much did you pay for a financial advisor to find your forgotten subscriptions?</p>
+<p>I asked my money buddy: &#x27;What subscriptions am I still paying for that I forgot about?&#x27;</p>
+<p>It went through my transactions and came back with the list. The ones I&#x27;d forgotten. The ones quietly billing me every month for things I don&#x27;t use.</p>
+<p>A financial advisor charges $200+ an hour for that conversation.</p>
+<p>I paid $0.</p>
+<p>There&#x27;s a tip jar. [link coming — tip jar being set up this week] 👻</p></div>
+<a class="btn" href="https://www.linkedin.com/feed/update/urn:li:activity:7522326760487571456/">Read it on LinkedIn</a>
+<nav class="pn"><a href="day-08.html">&larr; Day 8 — The trojan horse</a><a href="day-10.html">Day 10 — Double-charged &rarr;</a></nav>
+<p class="vision">The vision took 40 years. We&rsquo;re building it now.</p>
+<footer class="colophon"><span>The Buddy System · The Teaser Bank</span><span>Stop managing software. Start directing staff.</span></footer>
+</div>
+
+<div id="lightbox" role="dialog" aria-label="Photo viewer">
+  <img id="lb-img" alt="">
+  <div class="bar"><button id="lb-prev" aria-label="Previous photo">&#8249;</button>
+  <span id="lb-count"></span><button id="lb-next" aria-label="Next photo">&#8250;</button>
+  <button id="lb-close" aria-label="Close">&#10005;</button></div>
+</div>
+<script>
+(function(){
+  var imgs=[].slice.call(document.querySelectorAll('figure img'));
+  if(!imgs.length) return;
+  var lb=document.getElementById('lightbox'), im=document.getElementById('lb-img'),
+      ct=document.getElementById('lb-count'), cur=0;
+  function show(i){ cur=(i+imgs.length)%imgs.length; im.src=imgs[cur].src;
+    ct.textContent=(cur+1)+' / '+imgs.length;
+    document.getElementById('lb-prev').style.display=imgs.length>1?'':'none';
+    document.getElementById('lb-next').style.display=imgs.length>1?'':'none'; }
+  imgs.forEach(function(el,i){ el.addEventListener('click',function(){ show(i); lb.classList.add('open'); }); });
+  document.getElementById('lb-close').addEventListener('click',function(){ lb.classList.remove('open'); });
+  document.getElementById('lb-prev').addEventListener('click',function(){ show(cur-1); });
+  document.getElementById('lb-next').addEventListener('click',function(){ show(cur+1); });
+  lb.addEventListener('click',function(e){ if(e.target===lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') lb.classList.remove('open');
+    if(e.key==='ArrowLeft') show(cur-1);
+    if(e.key==='ArrowRight') show(cur+1); });
+})();
+</script>
+
+<script async src="https://visitor-counter.dave-5d7.workers.dev/beacon.js" data-site="teaser-bank"></script>
+</body>
+</html>

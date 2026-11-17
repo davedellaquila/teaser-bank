@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Teaser Bank — The Teaser Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Libre+Franklin:wght@300;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14161b; --bg-deep:#0e0f12; --ink:#ece7da; --ink-soft:#b9b3a4; --ink-faint:#7d7768;
+  --accent:#e8a33d; --hairline:rgba(236,231,218,.16); --hairline-soft:rgba(236,231,218,.08);
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f6f1e7; --bg-deep:#efe8d8; --ink:#1c1a16; --ink-soft:#55503f; --ink-faint:#8a8471;
+    --accent:#9a6d1d; --hairline:rgba(28,26,22,.18); --hairline-soft:rgba(28,26,22,.09); }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Libre Franklin",system-ui,sans-serif;font-weight:300;line-height:1.7;
+  font-size:clamp(1rem,2.3vw,1.13rem)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:50;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme: light){ body::after{opacity:.035} }
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+.masthead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:18px 0 14px;border-bottom:1px solid var(--hairline);
+  font-family:"Libre Franklin",sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.3em;text-transform:uppercase}
+.masthead .r{letter-spacing:.26em;color:var(--ink-faint);text-align:right}
+.masthead .r b{color:var(--accent);font-weight:600}
+.masthead a{color:inherit;text-decoration:none}
+h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;line-height:1.08}
+h1{font-size:clamp(2.6rem,8vw,4.6rem);letter-spacing:-.01em;margin:.35em 0 .3em}
+h2{font-size:clamp(1.9rem,5.4vw,3.1rem);line-height:1.12;margin:1.4em 0 .4em}
+h1 em,h2 em{font-style:italic;color:var(--accent)}
+.kicker{font-family:"Libre Franklin",sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint);margin-top:34px}
+.kicker b{color:var(--accent);font-weight:600}
+p{color:var(--ink-soft);max-width:62ch}
+p strong,li strong{color:var(--ink);font-weight:500}
+.lede{font-size:clamp(1.08rem,2.6vw,1.28rem);color:var(--ink-soft)}
+.rule{width:56px;height:2px;background:var(--accent);margin:34px 0 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin:26px 0 8px}
+.card{display:block;text-decoration:none;border:1px solid var(--hairline);color:var(--ink);
+  background:transparent;transition:border-color .25s}
+.card:hover{border-color:var(--accent)}
+.card img{width:100%;aspect-ratio:1200/627;object-fit:cover;display:block}
+.card .pad{padding:14px 16px 16px}
+.card .n{font-family:"Libre Franklin",sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.card .t{font-family:"Playfair Display",Georgia,serif;font-size:1.28rem;line-height:1.2;margin:6px 0 4px}
+.card .d{font-size:.86rem;color:var(--ink-faint)}
+.card.type .pad{padding-top:18px}
+.card .beat{font-size:.92rem;color:var(--ink-soft);margin-top:6px;line-height:1.55}
+figure{margin:26px 0}
+figure img{width:100%;display:block;cursor:zoom-in;border:1px solid var(--hairline-soft)}
+figcaption{font-size:.82rem;color:var(--ink-faint);margin-top:8px}
+.copy p{color:var(--ink-soft)}
+.btn{display:inline-block;margin:10px 10px 0 0;padding:11px 20px;border:1px solid var(--accent);
+  color:var(--accent);text-decoration:none;font-family:"Libre Franklin",sans-serif;
+  font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.btn:hover{background:var(--accent);color:var(--bg)}
+.note{border-left:2px solid var(--accent);padding:4px 0 4px 16px;margin:26px 0;color:var(--ink-soft);font-size:.95rem}
+.pn{display:flex;justify-content:space-between;gap:14px;margin:44px 0 6px;
+  border-top:1px solid var(--hairline);padding-top:18px;font-size:.92rem}
+.pn a{color:var(--accent);text-decoration:none}
+.pn .off{color:var(--ink-faint)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:1px solid var(--hairline);margin-top:40px;padding:16px 0 34px;
+  font-size:.85rem;color:var(--ink-faint)}
+.vision{font-family:"Playfair Display",Georgia,serif;font-style:italic;
+  font-size:clamp(1.3rem,3.6vw,1.8rem);color:var(--ink);margin:44px 0 0}
+#lightbox{position:fixed;inset:0;background:rgba(8,9,11,.94);display:none;z-index:100;
+  align-items:center;justify-content:center;flex-direction:column}
+#lightbox.open{display:flex}
+#lightbox img{max-width:94vw;max-height:84vh;object-fit:contain}
+#lightbox .bar{display:flex;gap:22px;align-items:center;margin-top:14px;color:#ece7da;
+  font-family:"Libre Franklin",sans-serif;font-size:.85rem;letter-spacing:.12em}
+#lightbox button{background:none;border:1px solid rgba(236,231,218,.4);color:#ece7da;
+  font-size:1rem;padding:6px 14px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><a href="index.html">The Buddy System</a><span class="r">The Teaser Bank · <b>LinkedIn 2026</b></span></header>
+<p class="kicker">The Buddy System · <b>A LinkedIn campaign, collected</b></p>
+<h1>Fourteen posts, twice —<br><em>the whole campaign, kept.</em></h1>
+<p class="lede">In the fall of 2026, Dave Dell'Aquila told the 40-year story of an idea on LinkedIn — one post a day, in two series. Feeds scroll away. This package keeps the campaign: every post as it ran, and the second series as it stands.</p>
+<div class="rule"></div>
+<h2>Series 1 — <em>one app.</em></h2>
+<p>Oct 20 – Nov 2, 2026. The origin arc — a 1987 concept video, a 1993 Mac program called Rae Assist, its first user coming back — and then the present day: Money Buddy, the first buddy out the door, and a tip jar for a business model. All fourteen posts are live on LinkedIn; each page here carries the copy exactly as published, the image that ran with it, and the link to the post itself.</p>
+<div class="cards"><a class="card" href="series-1/day-01.html"><img src="assets/post-01.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 1</span><span class="t" style="display:block">The 40-year arc</span><span class="d">Tue Oct 20, 2026</span></span></a>
+<a class="card" href="series-1/day-02.html"><img src="assets/post-02.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 2</span><span class="t" style="display:block">The Knowledge Navigator</span><span class="d">Wed Oct 21, 2026</span></span></a>
+<a class="card" href="series-1/day-03.html"><img src="assets/post-03.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 3</span><span class="t" style="display:block">Rae Assist, 1993</span><span class="d">Thu Oct 22, 2026</span></span></a>
+<a class="card" href="series-1/day-04.html"><img src="assets/post-04.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 4</span><span class="t" style="display:block">The fall</span><span class="d">Fri Oct 23, 2026</span></span></a>
+<a class="card" href="series-1/day-05.html"><img src="assets/post-05.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 5</span><span class="t" style="display:block">Penny&#x27;s return</span><span class="d">Sat Oct 24, 2026</span></span></a>
+<a class="card" href="series-1/day-06.html"><img src="assets/post-06.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 6</span><span class="t" style="display:block">Why now</span><span class="d">Sun Oct 25, 2026</span></span></a>
+<a class="card" href="series-1/day-07.html"><img src="assets/post-07.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 7</span><span class="t" style="display:block">What it is — a staff</span><span class="d">Mon Oct 26, 2026</span></span></a>
+<a class="card" href="series-1/day-08.html"><img src="assets/post-08.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 8</span><span class="t" style="display:block">The trojan horse</span><span class="d">Tue Oct 27, 2026</span></span></a>
+<a class="card" href="series-1/day-09.html"><img src="assets/post-09.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 9</span><span class="t" style="display:block">Forgotten subscriptions</span><span class="d">Wed Oct 28, 2026</span></span></a>
+<a class="card" href="series-1/day-10.html"><img src="assets/post-10.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 10</span><span class="t" style="display:block">Double-charged</span><span class="d">Thu Oct 29, 2026</span></span></a>
+<a class="card" href="series-1/day-11.html"><img src="assets/post-11.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 11</span><span class="t" style="display:block">The eyeglasses story</span><span class="d">Fri Oct 30, 2026</span></span></a>
+<a class="card" href="series-1/day-12.html"><img src="assets/post-12.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 12</span><span class="t" style="display:block">One picture</span><span class="d">Sat Oct 31, 2026</span></span></a>
+<a class="card" href="series-1/day-13.html"><img src="assets/post-13.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 13</span><span class="t" style="display:block">The staff grows</span><span class="d">Sun Nov 1, 2026</span></span></a>
+<a class="card" href="series-1/day-14.html"><img src="assets/day14-hero.jpg" alt=""><span class="pad" style="display:block"><span class="n">Day 14</span><span class="t" style="display:block">The tip jar</span><span class="d">Mon Nov 2, 2026</span></span></a></div>
+<h2>Series 2 — <em>the whole staff.</em></h2>
+<p>Series 1 was one app. Series 2 is the platform: the staff model, the dashboard, the briefings and the standup, two newspapers, an hourly chime, a joke vault — Money Buddy reframed as one desk among many. The slate was presented on Nov 2, 2026 with a proposed run of Nov 3–16; per the campaign rule, nothing posts until Dave green-lights the series. These pages present the slate as written — beat, draft copy, and the screenshot each post calls for.</p>
+<div class="cards"><a class="card type" href="series-2/post-01.html"><span class="pad"><span class="n">Post 1</span><span class="t" style="display:block">The system</span><span class="d">Proposed for Nov 3, 2026</span><span class="beat" style="display:block">Series 1 was one app. This is the whole staff — the reveal that Money Buddy is one desk in a 176-buddy office.</span></span></a>
+<a class="card type" href="series-2/post-02.html"><span class="pad"><span class="n">Post 2</span><span class="t" style="display:block">Anatomy of a buddy</span><span class="d">Proposed for Nov 4, 2026</span><span class="beat" style="display:block">What a buddy actually is: a thread you can talk to, a repo that remembers, a homepage showing current state, an inbox it triages.</span></span></a>
+<a class="card type" href="series-2/post-03.html"><span class="pad"><span class="n">Post 3</span><span class="t" style="display:block">The chief of staff</span><span class="d">Proposed for Nov 5, 2026</span><span class="beat" style="display:block">Astro: one conversation routes everything; Dave directs, the staff works. The director&#x27;s-desk model.</span></span></a>
+<a class="card type" href="series-2/post-04.html"><span class="pad"><span class="n">Post 4</span><span class="t" style="display:block">The morning briefing</span><span class="d">Proposed for Nov 6, 2026</span><span class="beat" style="display:block">The day starts assembled: news, calendar, reminders, tonight&#x27;s dinner — local to wherever Dave is that week.</span></span></a>
+<a class="card type" href="series-2/post-05.html"><span class="pad"><span class="n">Post 5</span><span class="t" style="display:block">The standup, in their own voices</span><span class="d">Proposed for Nov 7, 2026</span><span class="beat" style="display:block">The audio standup: every buddy reports briefly, each in its own cast voice — a four-minute radio play with the coffee.</span></span></a>
+<a class="card type" href="series-2/post-06.html"><span class="pad"><span class="n">Post 6</span><span class="t" style="display:block">The Morning Edition</span><span class="d">Proposed for Nov 8, 2026</span><span class="beat" style="display:block">Brand new (launched Nov 2): Dave&#x27;s personal front page — briefing, full standup transcript, headlines, and decision cards with tappable options that route themselves.</span></span></a>
+<a class="card type" href="series-2/post-07.html"><span class="pad"><span class="n">Post 7</span><span class="t" style="display:block">The Fiddletown Gazette</span><span class="d">Proposed for Nov 9, 2026</span><span class="beat" style="display:block">The staff publishes a small-town paper: three editions a day, foothills history back to the Gold Rush, and the beloved Critter Desk.</span></span></a>
+<a class="card type" href="series-2/post-08.html"><span class="pad"><span class="n">Post 8</span><span class="t" style="display:block">Hans and the hourly chime</span><span class="d">Proposed for Nov 10, 2026</span><span class="beat" style="display:block">Hans the timekeeper: an hourly chime with a verse and read-aloud audio, quiet hours, and an urgent-only warning line when a buddy needs Dave.</span></span></a>
+<a class="card type" href="series-2/post-09.html"><span class="pad"><span class="n">Post 9</span><span class="t" style="display:block">The Lenwood Gazette</span><span class="d">Proposed for Nov 11, 2026</span><span class="beat" style="display:block">The second paper: same system, different community — San Jose&#x27;s Lenwood neighborhood, Dave&#x27;s work-week home. Two newsrooms, one staff.</span></span></a>
+<a class="card type" href="series-2/post-10.html"><span class="pad"><span class="n">Post 10</span><span class="t" style="display:block">The Joke Vault</span><span class="d">Proposed for Nov 12, 2026</span><span class="beat" style="display:block">A buddy whose whole job is jokes: a joke a day plus a riddle whose answer opens tomorrow&#x27;s send; join by email; it also feeds the Gazette&#x27;s daily joke. Tip-jar line lives here naturally — the vault&#x27;s sends carry one every third or fourth send.</span></span></a>
+<a class="card type" href="series-2/post-11.html"><span class="pad"><span class="n">Post 11</span><span class="t" style="display:block">Homepage auditions</span><span class="d">Proposed for Nov 13, 2026</span><span class="beat" style="display:block">Every buddy homepage is auditioned against a published 100-point rubric; the bar is 75; scores live on a public leaderboard (Developer Buddy 94, fleet average ~61).</span></span></a>
+<a class="card type" href="series-2/post-12.html"><span class="pad"><span class="n">Post 12</span><span class="t" style="display:block">Voice casting</span><span class="d">Proposed for Nov 14, 2026</span><span class="beat" style="display:block">Buddies audition for their voices too: three tapes, Dave picks — that&#x27;s why the standup sounds like radio instead of a screen reader.</span></span></a>
+<a class="card type" href="series-2/post-13.html"><span class="pad"><span class="n">Post 13</span><span class="t" style="display:block">Your data is yours</span><span class="d">Proposed for Nov 15, 2026</span><span class="beat" style="display:block">The ownership rule under everything: data lives in Dave&#x27;s own repos as plain files; services hold working copies; the vendor-vanished test; the Substack white paper.</span></span></a>
+<a class="card type" href="series-2/post-14.html"><span class="pad"><span class="n">Post 14</span><span class="t" style="display:block">One desk among many (finale)</span><span class="d">Proposed for Nov 16, 2026</span><span class="beat" style="display:block">Full circle: back to Money Buddy, reframed as one desk of 176. The tip jar&#x27;s first coin landed during Series 1 (Nan&#x27;s $5). Closer carries the Ko-fi link IN the draft this time — Series 1&#x27;s finale shipped link-free at Dave&#x27;s call; strike it here if he wants the same.</span></span></a></div>
+<p class="vision">The vision took 40 years. We&rsquo;re building it now.</p>
+<footer class="colophon"><span>The Buddy System · The Teaser Bank</span><span>Stop managing software. Start directing staff.</span></footer>
+</div>
+
+<div id="lightbox" role="dialog" aria-label="Photo viewer">
+  <img id="lb-img" alt="">
+  <div class="bar"><button id="lb-prev" aria-label="Previous photo">&#8249;</button>
+  <span id="lb-count"></span><button id="lb-next" aria-label="Next photo">&#8250;</button>
+  <button id="lb-close" aria-label="Close">&#10005;</button></div>
+</div>
+<script>
+(function(){
+  var imgs=[].slice.call(document.querySelectorAll('figure img'));
+  if(!imgs.length) return;
+  var lb=document.getElementById('lightbox'), im=document.getElementById('lb-img'),
+      ct=document.getElementById('lb-count'), cur=0;
+  function show(i){ cur=(i+imgs.length)%imgs.length; im.src=imgs[cur].src;
+    ct.textContent=(cur+1)+' / '+imgs.length;
+    document.getElementById('lb-prev').style.display=imgs.length>1?'':'none';
+    document.getElementById('lb-next').style.display=imgs.length>1?'':'none'; }
+  imgs.forEach(function(el,i){ el.addEventListener('click',function(){ show(i); lb.classList.add('open'); }); });
+  document.getElementById('lb-close').addEventListener('click',function(){ lb.classList.remove('open'); });
+  document.getElementById('lb-prev').addEventListener('click',function(){ show(cur-1); });
+  document.getElementById('lb-next').addEventListener('click',function(){ show(cur+1); });
+  lb.addEventListener('click',function(e){ if(e.target===lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') lb.classList.remove('open');
+    if(e.key==='ArrowLeft') show(cur-1);
+    if(e.key==='ArrowRight') show(cur+1); });
+})();
+</script>
+
+<script async src="https://visitor-counter.dave-5d7.workers.dev/beacon.js" data-site="teaser-bank"></script>
+</body>
+</html>
